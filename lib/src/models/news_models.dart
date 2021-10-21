@@ -2,6 +2,8 @@
 //
 //     final newsResponse = newsResponseFromJson(jsonString);
 
+// ignore_for_file: prefer_if_null_operators
+
 import 'dart:convert';
 
 NewsResponse newsResponseFromJson(String str) =>
@@ -57,21 +59,28 @@ class Article {
 
   factory Article.fromJson(Map<String, dynamic> json) => Article(
         source: Source.fromJson(json["source"]),
+        // ignore: prefer_if_null_operators
         author: json["author"] == null ? null : json["author"],
         title: json["title"],
+        // ignore: prefer_if_null_operators
         description: json["description"] == null ? null : json["description"],
         url: json["url"],
+        // ignore: prefer_if_null_operators
         urlToImage: json["urlToImage"] == null ? null : json["urlToImage"],
         publishedAt: DateTime.parse(json["publishedAt"]),
+        // ignore: prefer_if_null_operators
         content: json["content"] == null ? null : json["content"],
       );
 
   Map<String, dynamic> toJson() => {
         "source": source.toJson(),
+        // ignore: prefer_if_null_operators
         "author": author == null ? null : author,
         "title": title,
+        // ignore: prefer_if_null_operators
         "description": description == null ? null : description,
         "url": url,
+        // ignore: prefer_if_null_operators
         "urlToImage": urlToImage == null ? null : urlToImage,
         "publishedAt": publishedAt.toIso8601String(),
         "content": content == null ? null : content,
