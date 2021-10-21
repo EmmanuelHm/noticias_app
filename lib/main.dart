@@ -4,9 +4,11 @@ import 'package:noticias_app/src/services/news_service.dart';
 import 'package:noticias_app/src/theme/tema.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Noticias App',
         theme: miTema,
-        home: TabsPage(),
+        home: const TabsPage(),
       ),
     );
   }
